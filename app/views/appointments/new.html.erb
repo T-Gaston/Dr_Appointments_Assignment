@@ -1,0 +1,14 @@
+<h1>Add Appointment</h1>
+<%= form_with(model: [@patient, @appointment], local: true, class: "ui form" ) do |f| %>
+  <%= f.label :doctor %>
+  <%= f.select :doctor_id, @doctors.collect { |u| [u.name, u.id] } %>
+  <br>
+  <%= f.label :date %>
+  <%= f.date_field :date, min: Date.tomorrow, required: true %>
+  <br>
+  <%= f.label :time %>
+  <%= f.time_select :time,{ampm: true, ignore_date: true, start_hour: 8, end_hour: 17}, required: true %>
+  <br>
+  <%= f.submit nil, class: "ui green button inverted" %>
+<% end %>
+

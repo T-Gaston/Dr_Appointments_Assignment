@@ -1,4 +1,6 @@
 <h1><%= @patient.full_name %></h1>
+<%= link_to 'Appointments', patient_appointments_path(@patient), class: "ui primary button inverted" %>
+<%= link_to 'Delete Patient', @patient, method: :delete, class: "ui red button inverted" %>
 <hr />
 <h2>Doctors</h2>
 <ul>
@@ -8,5 +10,3 @@
     </li>
   <% end %>
 </ul>
-<hr />
-<%= link_to 'Delete Patient', @patient, method: :delete, class: "ui red button inverted" %>
